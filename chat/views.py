@@ -3,7 +3,6 @@ from .models import ChatMessage
 
 
 def index(request):
-    # We want to show the last 10 messages, ordered most-recent-last
     chat_queryset = ChatMessage.objects.order_by("-created")[:10]
     chat_message_count = len(chat_queryset)
     if chat_message_count > 0:
